@@ -1,5 +1,7 @@
 let mainDiv = document.getElementById("main-div");
 let usercurrent = localStorage.getItem("username");
+let login = document.getElementById("login-btn");
+let logout = document.getElementById("logout-btn");
 
 const apiall = "https://restcountries.com/v3.1/all";
 // offical name https://restcountries.com/v3.1/name/{name}?fullText=true

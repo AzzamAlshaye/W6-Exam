@@ -1,4 +1,5 @@
 let mainDiv = document.getElementById("main-div");
+let usercurrent = localStorage.getItem("username");
 
 const apiall = "https://restcountries.com/v3.1/all";
 // offical name https://restcountries.com/v3.1/name/{name}?fullText=true
@@ -50,6 +51,9 @@ fetch(`${apiall}`)
       mainDiv.appendChild(card);
     });
   });
+
+if (userData) {
+}
 
 // namescomm,
 //     namesoffical,

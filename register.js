@@ -51,7 +51,7 @@ authBtn.addEventListener("click", async () => {
   });
 
   alert("you registered correctly move to login");
-  localStorage.setItem("username", liUsername);
+  window.location.href = "./login.html";
 });
 
 // decodeURIComponent

@@ -1,71 +1,57 @@
 let mainDiv = document.getElementById("main-div");
 
 const apilink =
-  "https://api.harvardartmuseums.org/RESOURCE_TYPE?apikey=6352f816-73d6-42ff-92ae-e5a7e45501ea";
+  "https://api.harvardartmuseums.org/object?apikey=6352f816-73d6-42ff-92ae-e5a7e45501ea";
 
-// Find all of the objects that are paintings and have the word "rabbit" in the title
-var apiEndpointBaseURL = "https://api.harvardartmuseums.org/object";
-var queryString = $.param({
-  apikey: "6352f816-73d6-42ff-92ae-e5a7e45501ea",
-  title: "rabbit",
-  classification: "Paintings",
-});
+fetch(`${apilink}`)
+  .then((response) => response.json())
+  .then((data) => {
+    data.records.forEach((element) => {
+      let card = document.createElement("div");
+      card.classList.add("card-main");
+      let description = document.createElement("p");
+      description.innerText = element.verificationleveldescription;
+      console.log(description);
+      let artpng = document.createElement("img");
+      artpng.src = element.images.baseimageurl;
+      artpng.style.height = "5rem";
+      artpng.style.width = "5rem";
+      console.log(artpng);
+      let title = document.createElement("h4");
+      title.innerText = element.title;
+      console.log(title);
+      let artest = document.createElement("p");
+      artest.innerText = element.creditline;
+      console.log(artest);
+      let date = document.createElement("p");
+      date.innerText = element.createdate;
+      console.log(date);
 
-$.getJSON(apiEndpointBaseURL + "?" + queryString, function (data) {
-  console.log(data);
-});
-// let languages = document.createElement("ul");
-// fetch(`${apiall}`)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     data.forEach((element) => {
-//       let card = document.createElement("div");
-//       card.classList.add("card-main");
-//       let namescomm = document.createElement("p");
-//       namescomm.innerText = element.name.common;
-//       console.log(namescomm);
-//       let namesoffical = document.createElement("p");
-//       namesoffical.innerText = element.name.official;
-//       console.log(namesoffical);
-//       let population = document.createElement("p");
-//       population.innerText = element.population;
-//       console.log(population);
-//       let flagPng = document.createElement("img");
-//       flagPng.src = element.flags.png;
-//       flagPng.style.height = "5rem";
-//       flagPng.style.width = "5rem";
-//       console.log(flagPng);
-//       let region = document.createElement("p");
-//       region.innerText = element.region;
-//       console.log(region);
-//       //   let languages = document.createElement("p");
-//       //   languages.forEach((e) => {
-//       //     languages.innerText = element.languages;
-//       //     console.log(languages);
-//       //   });
+      card.appendChild(artpng);
+      card.appendChild(title);
+      card.appendChild(date);
+      card.appendChild(artest);
+      card.appendChild(description);
 
-//       let maps = document.createElement("p");
-//       maps.innerText = `maps:${element.maps.googleMaps}`;
-//       maps.classList.add("mapsText");
-//       console.log(maps);
-//       // mainDiv.appandchild(namescomm , namesoffical);
-//       //   let nameOffi
-//       console.log("------------");
-//       card.appendChild(flagPng);
-//       card.appendChild(namescomm);
-//       card.appendChild(namesoffical);
-//       card.appendChild(population);
-//       card.appendChild(region);
-//       card.appendChild(languages);
-//       card.appendChild(maps);
+      mainDiv.appendChild(card);
+    });
+  });
 
-//       mainDiv.appendChild(card);
-//     });
-//   });
+//   العنصر
+// الوصف
+// records.verificationleveldescription
+// الصورة
+// صورة اللوحة بجودة جيدة
+// records.images.baseimageurl
 
-// // namescomm,
-// //     namesoffical,
-// //     population,
-// //     region,
-// //     languages,
-// //     maps
+// العنوان
+// اسم العمل الفني
+// records.title
+
+// الفنان
+// اسم الفنان (إن وُجد)
+// records.creditline
+
+// التاريخ
+// متى تم إنشاء العمل
+//records.createdate

@@ -1,0 +1,13 @@
+.loginbtn {
+  padding: 0.8rem 3rem 0.8rem;
+  border: 1px black solid;
+  color: black;
+  background-color: rgb(214, 214, 214);
+  /* background-color: rgb(206, 206, 204); */
+}
+.registerbtn {
+  padding: 0.8rem 3rem 0.8rem;
+  border: 1px black solid;
+  color: white;
+  background-color: black;
+}

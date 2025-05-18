@@ -1,0 +1,28 @@
+.nav-main {
+  background-color: rgb(79, 79, 79);
+}
+.navbar-brand,
+.navbar-toggler-icon,
+.nav-link {
+  color: white;
+}
+
+#main-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.card-main {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 20rem;
+  border: 1px black solid;
+  background-color: rgb(248, 244, 238);
+  border-radius: 0.5rem;
+}
+
+.mapsText {
+  font-size: 0.8rem;
+}

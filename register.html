@@ -41,8 +41,9 @@
                       >
                       <input
                         type="text"
-                        id="username"
+                        id="auth-username"
                         class="form-control form-control-lg"
+                        required
                       />
                     </div>
 
@@ -52,17 +53,17 @@
                         type="email"
                         id="auth-Email"
                         class="form-control form-control-lg"
+                        required
                       />
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                      <label class="form-label" for="register-pass"
-                        >Password</label
-                      >
+                      <label class="form-label" for="auth-pass">Password</label>
                       <input
                         type="password"
-                        id="register-pass"
+                        id="auth-pass"
                         class="form-control form-control-lg"
+                        required
                       />
                     </div>
                     <!-- <div class="form-outline form-white mb-4">
@@ -78,7 +79,6 @@
 
                     <button
                       class="btn btn-outline-light btn-lg px-5"
-                      type="submit"
                       id="auth-btn"
                     >
                       Login
@@ -88,7 +88,9 @@
                   <div>
                     <p class="mb-0">
                       have an account?
-                      <a href="#!" class="text-white-50 fw-bold">login</a>
+                      <a href="./login.html" class="text-white-50 fw-bold"
+                        >login</a
+                      >
                     </p>
                   </div>
                 </div>
@@ -108,5 +110,6 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+    <script src="./register.js"></script>
   </body>
 </html>
